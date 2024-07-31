@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #FCFCFC;
+    --secondary: #000000;
+    --blue: #29339B;
+    --yellow: #FAFF00;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--blue);
+}
+
+h1 {
+    color: var(--yellow);
+    margin-bottom: 2rem;
+}
+
+h1 span {
+    color: var(--primary);
+}
+
+h4 {
+    color: var(--yellow);
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 17%;
+}
+
+.contain span {
+    display: inline-block;
+    height: .8rem;
+    width: .8rem;
+    border-radius: 50%;
+}
+
+.contain span:nth-child(1) {
+    background-color: orange;
+    color: transparent;
+}
+
+.contain span:nth-child(2) {
+    background-color: yellow;
+    color: transparent;
+}
+
+.contain span:nth-child(3) {
+    background-color: red;
+    color: transparent;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary);
+  min-width: 20rem;
+  height: 30rem;
+  border-radius: 1rem 1rem 2rem 2rem;
+  box-shadow: 0px 5px 1px 1px #656fdb;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  padding: .4rem .3rem;
+  margin: 1rem;
+  border-radius: .5rem .5rem 1rem 1rem;
+  margin-bottom: .4rem;
+}
+
+.input-fields input {
+    margin-top: .5rem;
+    outline: none;
+    padding: .5rem;
+    text-align: right;
+    border: none;
+    font-size: 1rem;
+}
+
+.inputs {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+ height: 100%;
+ padding: .5rem 1rem;
+ border: none;
+}
+
+
+.btn-input {
+ background-color: var(--blue);
+ color: var(--primary);
+ border: none;
+ margin: .4rem;
+ border-radius: 1rem;
+ font-size: 1.20rem;
+ transition: all .05s;
+ box-shadow: 0px 3px 1px 1px #656fdb;
+}
+
+.btn-input:active {
+    transform: translateY(.1cm);
+}
+
+.equal {
+    grid-column: span 2;
+    background-color: var(--primary);
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--primary);
+    text-align: right;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+    font-size: .5rem;
+}
