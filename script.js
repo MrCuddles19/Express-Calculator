@@ -137,7 +137,7 @@ function solveQuestion() {
     if (isValidMathExpression(questionInput.value)) {
         answerDisplay.value = eval(questionInput.value);
     } else {
-    alert('Provide a correct question');
+    alert('Please provide a correct question');
     };
 
     if (isValidMathExpression(questionInput.value)) {
