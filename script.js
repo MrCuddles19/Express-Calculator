@@ -7,28 +7,59 @@ const answerDisplay = document.querySelector('.answer-js');
 const bracketButton = document.querySelector('.brackets');
 
 inputButtons.forEach((button) => {
+
     button.addEventListener('click', () => {
         questionInput.value += button.value;
-    })
+    });
+
+    button.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && event.target.tagName === 'INPUT') {
+            event.preventDefault();        
+        }
+    });
+});
+
+document.addEventListener('keydown', (event) => {
+     inputButtons.forEach((button) => {
+        if (event.key === button.value) {
+            button.click();
+            isClicked(button);
+        }
+ });
 });
 
 clearButton.addEventListener('click', () => {
-    questionInput.value = '';
-    answerDisplay.value = '';
+        clear();
+        isClicked(clearButton);
+})
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'c' || event.key === 'C') {
+        clear();
+        isClicked(clearButton);
+    }
 })
 
 deleteButton.addEventListener('click', () => {
-    questionInput.value = questionInput.value.slice(0, -1);
-    answerDisplay.value = '';
+       deleTe();
+});
+
+document.addEventListener('keydown', (event) => {
+     if (event.key === 'Backspace') {
+        deleTe();
+        isClicked(deleteButton);
+     }
 });
 
 solveButton.addEventListener('click', () => {
-    if (isValidMathExpression(questionInput.value)) {
-        answerDisplay.value = eval(questionInput.value);
-    } else {
-    alert('Provide a correct question');
-    }
+        solveQuestion();
 });
+
+window.addEventListener('keydown', (event) => {
+     if (event.key === 'Enter' || event.key === '=') {
+        solveQuestion();
+     };
+});
+
 
 let bracket = '(';
 
@@ -44,6 +75,16 @@ let bracket = '(';
 
     console.log(bracket);
  });
+
+ document.addEventListener('keydown', (event) => {
+    if (event.key === '(') {
+        questionInput.value += event.key;
+        isClicked(bracketButton);
+    } else if (event.key === ')') {
+        questionInput.value += event.key;
+        isClicked(bracketButton);
+    }
+ })
 
  function isValidMathExpression(expression) {
     // Check for unmatched parentheses
@@ -83,4 +124,46 @@ let bracket = '(';
 
     return true;
 }
+
+function solveQuestion() {
+
+    let isTrue = true;
+    if (answerDisplay.value) {
+        isTrue = false;
+        console.log(isTrue);
+    };
+
+
+    if (isValidMathExpression(questionInput.value)) {
+        answerDisplay.value = eval(questionInput.value);
+    } else {
+    alert('Provide a correct question');
+    };
+
+    if (isValidMathExpression(questionInput.value)) {
+        if (isTrue) {
+    solveButton.style.transform = 'translateY(.1cm)';
+        setTimeout(() => {
+            solveButton.style.transform = 'translateY(0)'
+        },200);
+    };
+    };
+};
+
+function deleTe() {
+    questionInput.value = questionInput.value.slice(0, -1);
+    answerDisplay.value = '';
+};
+
+function clear() {
+    questionInput.value = '';
+    answerDisplay.value = '';
+}
+
+function isClicked(button) {
+    button.style.transform = 'translateY(.1cm)';
+    setTimeout(() => {
+        button.style.transform = 'translateY(0)'
+    },200);
+};
 

@@ -93,12 +93,13 @@ h4 {
 }
 
 .input-fields input {
-    margin-top: .5rem;
+    margin-top: .2rem;
     outline: none;
-    padding: .5rem;
     text-align: right;
     border: none;
-    font-size: 1rem;
+    margin-top: .5rem;
+    font-size: 1.5rem;
+    padding-right: .4rem;
 }
 
 .inputs {
@@ -120,6 +121,7 @@ h4 {
  font-size: 1.20rem;
  transition: all .05s;
  box-shadow: 0px 3px 1px 1px #656fdb;
+ cursor: pointer;
 }
 
 .btn-input:active {
@@ -131,6 +133,12 @@ h4 {
     background-color: var(--primary);
     color: var(--blue);
     font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    margin: .4rem;
+    border-radius: 1rem;
+    transition: all .05s;
+    box-shadow: 0px 3px 1px 1px #656fdb;
 }
 
 p {
