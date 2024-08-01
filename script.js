@@ -125,6 +125,13 @@ let bracket = '(';
     return true;
 }
 
+function preprocessInput(expression) {
+    return expression.replace(/(\d)(\()/g, '$1*(')
+                     .replace(/(\))(\d)/g, ')*$2')
+                     .replace(/(\))(\()/g, ')*(')
+                     .replace(/(\d)(\d)/g, '$1*$2');
+}
+
 function solveQuestion() {
 
     let isTrue = true;
@@ -135,7 +142,8 @@ function solveQuestion() {
 
 
     if (isValidMathExpression(questionInput.value)) {
-        answerDisplay.value = eval(questionInput.value);
+        const preprocessedInput = preprocessInput(questionInput.value);
+        answerDisplay.value = eval(preprocessedInput);
     } else {
     alert('Please provide a correct question');
     };
