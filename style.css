@@ -101,9 +101,7 @@ h4 {
     padding-right: .4rem;
 }
 
-.answer:disabled {
-    cursor: not-allowed;
-}
+
 
 .inputs {
  display: grid;
