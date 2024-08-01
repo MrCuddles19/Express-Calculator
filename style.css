@@ -154,3 +154,9 @@ p {
     width: 80vw;
 }
 }
+
+@media (min-width: 1240px) {
+    .container {
+        width: 25vw;
+    }
+}
