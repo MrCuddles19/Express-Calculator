@@ -128,8 +128,6 @@ let bracket = '(';
 function preprocessInput(expression) {
     return expression.replace(/(\d)(\()/g, '$1*(')
                      .replace(/(\))(\d)/g, ')*$2')
-                     .replace(/(\))(\()/g, ')*(')
-                     .replace(/(\d)(\d)/g, '$1*$2');
 }
 
 function solveQuestion() {
